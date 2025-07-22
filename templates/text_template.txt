@@ -1,0 +1,17 @@
+rule_id: example_rule_001
+rule_name: Example Rule Name
+description: Description of what this rule detects
+search_filter: event_simpleName=ProcessRollup2 AND CommandLine=*example*
+search_outcome: Detects suspicious command line activity
+status: active
+created_on: 2025-07-20T00:00:00Z
+last_updated_on: 2025-07-20T00:00:00Z
+---
+rule_id: example_rule_002
+rule_name: Another Rule Name
+description: Another rule description
+search_filter: event_simpleName=UserLogon AND UserName=*admin*
+search_outcome: Detects admin login events
+status: active
+created_on: 2025-07-20T00:00:00Z
+last_updated_on: 2025-07-20T00:00:00Z

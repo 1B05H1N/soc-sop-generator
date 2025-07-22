@@ -1,0 +1,195 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables and configuration
+.env*
+*.env
+.env.confluence
+confluence_config.py
+credentials.enc
+secure_config.py
+.soc_sop_config.json
+confluence_config.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Data directories - NEVER commit sensitive data
+input/
+output/
+test_input/
+test_sops/
+data/
+
+# Example files - Safe for testing
+!examples/
+!examples/*.json
+!examples/*.csv
+!examples/*.md
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# API keys and tokens
+*api_key*
+*token*
+*secret*
+*password*
+*credential*
+
+# Data files - NEVER commit sensitive data
+*.json
+*.csv
+*.txt
+*.log
+*.xml
+*.yaml
+*.yml
+!requirements.txt
+!.gitignore
+!README.md
+!*.md
+!templates/*.json
+!templates/*.csv
+!templates/*.txt
+!examples/*.json
+!examples/*.csv
+!examples/*.md
+
+# Local configuration
+local_config.py
+config.local.py
+
+# Security platform backup files - NEVER commit
+*backup_summary*
+*_backup_summary_*
+*security_platform*
+*correlation_rules*
+*rule_backup*
+
+# Input files and data - NEVER commit sensitive data
+input_*.json
+input_*.csv
+input_*.txt
+*_input.*
+*_data.*
+*_rules.*
+*_correlation.*
+*_security.*
+*_backup.*
+*_export.*
+*_dump.*
+*_summary.*
+
+# Test output and generated files
+test_output*/
+quick_test_output*/
+test_sop_generator_output*/
+generated_sops*/
+local_sops*/
+confluence_drafts*/
+
+# Generated documentation and reports
+*_SUMMARY.md
+*_RESULTS.md
+*_TEST_*.md
+*_CLEANUP_*.md
+*_PRIVACY_*.md
+*_FINAL_*.md
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Configuration files with sensitive data
+config.json
+settings.json
+credentials.json
+secrets.json 

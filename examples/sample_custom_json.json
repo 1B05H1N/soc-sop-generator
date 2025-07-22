@@ -1,0 +1,38 @@
+[
+  {
+    "rule_id": "custom_001",
+    "rule_name": "Custom Authentication Alert",
+    "description": "Monitor authentication events from unusual locations",
+    "search_filter": "auth AND (failed OR success) AND geo_location",
+    "category": "Authentication",
+    "priority": "high",
+    "status": "active",
+    "mitre_techniques": ["T1078", "T1078.001"],
+    "created_date": "2025-01-21",
+    "last_modified": "2025-01-21"
+  },
+  {
+    "rule_id": "custom_002",
+    "rule_name": "Custom Data Exfiltration Detection",
+    "description": "Detect potential data exfiltration attempts",
+    "search_filter": "data AND (transfer OR upload) AND (large OR bulk)",
+    "category": "Data_Exfiltration",
+    "priority": "high",
+    "status": "active",
+    "mitre_techniques": ["T1041", "T1020"],
+    "created_date": "2025-01-21",
+    "last_modified": "2025-01-21"
+  },
+  {
+    "rule_id": "custom_003",
+    "rule_name": "Custom Command Execution Monitor",
+    "description": "Monitor command execution patterns",
+    "search_filter": "cmd AND (exec OR run) AND (suspicious OR unusual)",
+    "category": "Command_Execution",
+    "priority": "medium",
+    "status": "active",
+    "mitre_techniques": ["T1059", "T1059.001"],
+    "created_date": "2025-01-21",
+    "last_modified": "2025-01-21"
+  }
+] 

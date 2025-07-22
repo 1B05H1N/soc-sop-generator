@@ -1,0 +1,2 @@
+rule_id,rule_name,description,search_filter,search_outcome,status,created_on,last_updated_on
+csv_rule_001,CSV Rule Name,Description of what this rule detects,event_simpleName=ProcessRollup2 AND CommandLine=*csv*,Detects suspicious CSV activity,active,2025-07-20T00:00:00Z,2025-07-20T00:00:00Z

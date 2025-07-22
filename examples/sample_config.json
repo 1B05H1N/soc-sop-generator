@@ -1,0 +1,9 @@
+{
+  "author": "Your Name",
+  "contact_email": "your-email@your-domain.com",
+  "github_url": "https://github.com/your-username",
+  "organization": "Your Security Operations Center",
+  "version": "1.0.0",
+  "last_updated": "2025-01-21",
+  "_comment": "This file allows you to customize the Author and contact information used in generated SOPs"
+} 
