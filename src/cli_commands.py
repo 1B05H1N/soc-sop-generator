@@ -618,6 +618,82 @@ def mitre_mapping_command(input_file, output_file, format, detailed, validate):
             console.print(f"[red]Error mapping to MITRE ATT&CK: {e}[/red]")
 
 
+def test_confluence_command():
+    """Test Confluence connection and configuration"""
+    display_disclaimer()
+    
+    console.print(Panel.fit(
+        "Testing Confluence connection and configuration...",
+        title="[bold blue]Confluence Connection Test[/bold blue]"
+    ))
+    
+    try:
+        from src.confluence_api import ConfluenceAPI
+        from src.config_manager import ConfigurationManager
+        
+        # Load configuration
+        config_manager = ConfigurationManager()
+        config = config_manager.get_configuration_summary()
+        
+        # Get Confluence settings from environment variables
+        import os
+        confluence_url = os.getenv('CONFLUENCE_URL')
+        confluence_username = os.getenv('CONFLUENCE_USERNAME')
+        confluence_token = os.getenv('CONFLUENCE_API_TOKEN')
+        confluence_space = os.getenv('CONFLUENCE_SPACE_KEY')
+        
+        if not all([confluence_url, confluence_username, confluence_token, confluence_space]):
+            console.print("[red]ERROR: Missing Confluence configuration[/red]")
+            console.print("\n[yellow]Required environment variables:[/yellow]")
+            console.print("  • CONFLUENCE_URL")
+            console.print("  • CONFLUENCE_USERNAME")
+            console.print("  • CONFLUENCE_API_TOKEN")
+            console.print("  • CONFLUENCE_SPACE_KEY")
+            console.print("\n[yellow]Or create a .env file with:[/yellow]")
+            console.print("  CONFLUENCE_URL=https://your-domain.atlassian.net")
+            console.print("  CONFLUENCE_USERNAME=your-email@domain.com")
+            console.print("  CONFLUENCE_API_TOKEN=your-api-token")
+            console.print("  CONFLUENCE_SPACE_KEY=YOUR_SPACE_KEY")
+            return
+        
+        # Test connection
+        with console.status("[bold green]Testing Confluence connection..."):
+            confluence = ConfluenceAPI(confluence_url, confluence_username, confluence_token, confluence_space)
+            
+            if confluence.test_connection():
+                console.print("[green]SUCCESS: Confluence connection successful![/green]")
+                
+                # Display configuration summary
+                table = Table(title="Confluence Configuration")
+                table.add_column("Setting", style="cyan")
+                table.add_column("Value", style="green")
+                
+                table.add_row("URL", confluence_url)
+                table.add_row("Username", confluence_username)
+                table.add_row("Space Key", confluence_space)
+                table.add_row("API Token", "••••••••" if confluence_token else "Not set")
+                
+                console.print(table)
+                
+                console.print("\n[green]SUCCESS: Your Confluence configuration is working correctly![/green]")
+                console.print("You can now upload SOPs using the upload-to-confluence command.")
+                
+            else:
+                console.print("[red]ERROR: Confluence connection failed[/red]")
+                console.print("\n[yellow]Troubleshooting steps:[/yellow]")
+                console.print("1. Verify your Confluence URL is correct")
+                console.print("2. Check your username and API token")
+                console.print("3. Ensure your API token has the necessary permissions")
+                console.print("4. Verify the space key exists and you have access")
+                console.print("5. Check your network connection")
+                
+    except ImportError as e:
+        console.print(f"[red]ERROR: Import error: {e}[/red]")
+        console.print("Make sure all dependencies are installed: pip install -r requirements.txt")
+    except Exception as e:
+        console.print(f"[red]ERROR: Error testing Confluence connection: {e}[/red]")
+
+
 def version_command():
     """Show version information"""
     

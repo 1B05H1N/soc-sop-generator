@@ -15,7 +15,8 @@ from src.cli_commands import (
     generate_command, interactive_command, generate_multi_rule_sops_command,
     generate_templates_command, upload_to_confluence_command, validate_rules_command,
     security_audit_command, optimize_rules_command, config_command,
-    analytics_command, performance_command, mitre_mapping_command, version_command
+    analytics_command, performance_command, mitre_mapping_command, version_command,
+    test_confluence_command
 )
 
 
@@ -198,6 +199,12 @@ def performance(session_id, output_file, export_metrics):
 def mitre_mapping(input_file, output_file, format, detailed, validate):
     """Analyze and map security rules to MITRE ATT&CK techniques"""
     mitre_mapping_command(input_file, output_file, format, detailed, validate)
+
+
+@cli.command()
+def test_confluence():
+    """Test Confluence connection and configuration"""
+    test_confluence_command()
 
 
 @cli.command()
