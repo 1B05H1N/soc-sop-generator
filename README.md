@@ -255,8 +255,8 @@ python main.py upload-to-confluence \
       "search_filter": "event_simpleName=ProcessRollup2 AND CommandLine=*example*",
       "search_outcome": "Detects suspicious command line activity",
       "status": "active",
-      "created_on": "2025-01-21T00:00:00Z",
-      "last_updated_on": "2025-01-21T00:00:00Z"
+      "created_on": "2025-07-22T00:00:00Z",
+      "last_updated_on": "2025-07-22T00:00:00Z"
     }
   ]
 }
@@ -273,8 +273,8 @@ python main.py upload-to-confluence \
       "search_filter": "event_simpleName=ProcessRollup2 AND CommandLine=*suspicious*",
       "search_outcome": "Detects suspicious process activity",
       "status": "active",
-      "created_on": "2025-01-21T00:00:00Z",
-      "last_updated_on": "2025-01-21T00:00:00Z"
+      "created_on": "2025-07-22T00:00:00Z",
+      "last_updated_on": "2025-07-22T00:00:00Z"
     }
   ]
 }
@@ -283,7 +283,7 @@ python main.py upload-to-confluence \
 ### 3. CSV Format
 ```csv
 rule_id,rule_name,description,search_filter,search_outcome,status,created_on,last_updated_on
-csv_rule_001,CSV Rule Name,Description of what this rule detects,event_simpleName=ProcessRollup2 AND CommandLine=*csv*,Detects suspicious CSV activity,active,2025-01-21T00:00:00Z,2025-01-21T00:00:00Z
+csv_rule_001,CSV Rule Name,Description of what this rule detects,event_simpleName=ProcessRollup2 AND CommandLine=*csv*,Detects suspicious CSV activity,active,2025-07-22T00:00:00Z,2025-07-22T00:00:00Z
 ```
 
 ### 4. Text File Format
@@ -294,8 +294,8 @@ description: Description of what this rule detects
 search_filter: event_simpleName=ProcessRollup2 AND CommandLine=*example*
 search_outcome: Detects suspicious command line activity
 status: active
-created_on: 2025-01-21T00:00:00Z
-last_updated_on: 2025-01-21T00:00:00Z
+created_on: 2025-07-22T00:00:00Z
+last_updated_on: 2025-07-22T00:00:00Z
 ---
 rule_id: example_rule_002
 rule_name: Another Rule Name
@@ -303,8 +303,8 @@ description: Another rule description
 search_filter: event_simpleName=UserLogon AND UserName=*admin*
 search_outcome: Detects admin login events
 status: active
-created_on: 2025-01-21T00:00:00Z
-last_updated_on: 2025-01-21T00:00:00Z
+created_on: 2025-07-22T00:00:00Z
+last_updated_on: 2025-07-22T00:00:00Z
 ```
 
 ---
