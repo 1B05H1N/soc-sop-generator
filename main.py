@@ -119,13 +119,14 @@ def generate_templates(output_dir):
 @click.option('--as-draft', is_flag=True, help='Create pages as drafts for review')
 @click.option('--save-locally', is_flag=True, help='Save SOPs locally as Markdown files')
 @click.option('--dry-run', is_flag=True, help='Show what would be uploaded without creating pages')
+@click.option('--sort-alphabetically', is_flag=True, default=True, help='Sort SOPs alphabetically before uploading')
 def upload_to_confluence(input_file, input_format, confluence_url, confluence_username, 
                         confluence_token, confluence_space, confluence_parent, confluence_folder, rule_filter,
-                        status, category, priority, update_existing, as_draft, save_locally, dry_run):
+                        status, category, priority, update_existing, as_draft, save_locally, dry_run, sort_alphabetically):
     """Upload SOPs directly to Confluence"""
     upload_to_confluence_command(input_file, input_format, confluence_url, confluence_username, 
                                confluence_token, confluence_space, confluence_parent, confluence_folder, rule_filter,
-                               status, category, priority, update_existing, as_draft, save_locally, dry_run)
+                               status, category, priority, update_existing, as_draft, save_locally, dry_run, sort_alphabetically)
 
 
 @cli.command()

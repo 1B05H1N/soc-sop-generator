@@ -247,7 +247,7 @@ def generate_templates_command(output_dir):
 
 def upload_to_confluence_command(input_file, input_format, confluence_url, confluence_username, 
                                confluence_token, confluence_space, confluence_parent, confluence_folder, rule_filter,
-                               status, category, priority, update_existing, as_draft, save_locally, dry_run):
+                               status, category, priority, update_existing, as_draft, save_locally, dry_run, sort_alphabetically):
     """Upload SOPs directly to Confluence"""
     
     display_disclaimer()
@@ -295,6 +295,9 @@ def upload_to_confluence_command(input_file, input_format, confluence_url, confl
         title="[bold blue]SOC SOP Generator[/bold blue]"
     ))
     
+    if sort_alphabetically:
+        console.print("[yellow]Note: SOPs will be uploaded in alphabetical order[/yellow]")
+    
     # Initialize generator
     generator = SOPGenerator()
     
@@ -308,7 +311,7 @@ def upload_to_confluence_command(input_file, input_format, confluence_url, confl
             result = generator.upload_to_confluence(
                 input_file, input_format, confluence_url, confluence_username,
                 confluence_token, confluence_space, confluence_parent, confluence_folder,
-                rule_filter, status, category, priority, update_existing, as_draft, save_locally, dry_run
+                rule_filter, status, category, priority, update_existing, as_draft, save_locally, dry_run, sort_alphabetically
             )
             
             if result:

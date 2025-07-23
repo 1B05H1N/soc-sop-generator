@@ -508,7 +508,8 @@ class SOPGenerator:
                            update_existing: bool = False,
                            as_draft: bool = False,
                            save_locally: bool = False,
-                           dry_run: bool = False) -> bool:
+                           dry_run: bool = False,
+                           sort_alphabetically: bool = True) -> bool:
         """Upload SOPs to Confluence - main entry point for CLI"""
         try:
             # Import here to avoid circular imports
@@ -530,6 +531,11 @@ class SOPGenerator:
             
             if not sops:
                 return False
+            
+            # Sort SOPs alphabetically if requested
+            if sort_alphabetically:
+                sops = sorted(sops, key=lambda x: x.get('rule_name', '').lower())
+                logger.info(f"Sorted {len(sops)} SOPs alphabetically")
             
             # Upload each SOP
             for sop in sops:
