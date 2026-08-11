@@ -6,6 +6,7 @@ metadata, and page management. Supports draft creation and local file saving.
 """
 
 import requests
+import functools
 import json
 import base64
 from typing import Dict, List, Any, Optional
@@ -40,6 +41,8 @@ class ConfluenceAPI:
         self.space_key = space_key
         self.session = requests.Session()
         self.session.auth = (username, api_token)
+        # Apply a default timeout to every request so calls cannot hang forever.
+        self.session.request = functools.partial(self.session.request, timeout=60)
         self.session.headers.update({
             'Accept': 'application/json',
             'Content-Type': 'application/json',
