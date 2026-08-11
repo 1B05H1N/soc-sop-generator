@@ -72,7 +72,7 @@ try {
     & "venv\Scripts\Activate.ps1"
     Write-Host "SUCCESS: Virtual environment activated" -ForegroundColor Green
 } catch {
-    Write-Host "❌ Failed to activate virtual environment" -ForegroundColor Red
+    Write-Host " Failed to activate virtual environment" -ForegroundColor Red
     Write-Host "Trying alternative activation method..." -ForegroundColor Yellow
     try {
         & "venv\Scripts\activate.bat"

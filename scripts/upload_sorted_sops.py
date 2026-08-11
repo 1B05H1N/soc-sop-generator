@@ -107,7 +107,7 @@ def upload_sops_sorted(input_file: str,
     
     # Summary
     console.print("\n" + "="*50)
-    console.print("📊 Upload Summary:")
+    console.print(" Upload Summary:")
     console.print(f"   Total SOPs: {len(sorted_sops)}")
     console.print(f"   Successful: {successful_uploads}")
     console.print(f"   Failed: {failed_uploads}")
